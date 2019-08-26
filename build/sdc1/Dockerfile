@@ -1,0 +1,1 @@
+FROM streamsets/datacollector:3.10.0

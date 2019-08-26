@@ -1,0 +1,26 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IntelliJ config
+.idea/
+*.iml
+
+#Don't commit certificates
+*.jks
+*.pfx
+
+#Don't commit passwords
+keystore-password.txt
+
+# Ignore all files in host volumes by default
+/host_volumes/**
+# Exclude subdirectories (while still including files)
+!/host_volumes/**/
+# Exclude .gitkeep files to preserve subdirectories with this file
+!.gitkeep

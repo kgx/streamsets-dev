@@ -1,0 +1,31 @@
+version: '3.7'
+services:
+  sdc1:
+    container_name: ${COMPOSE_PROJECT_NAME}_sdc1
+    build: build/sdc1
+    ports:
+      - '18630:18630'
+    volumes:
+      - './host_volumes/host_data:/host_data'
+      - './host_volumes/sdc1_libs_extras:/opt/streamsets-datacollector-${SDC_VERSION}/streamsets-libs-extras'
+      - 'sdc1_data:/data'
+      - 'sdc1_conf:/etc/sdc'
+      - 'sdc1_user_libs:/opt/streamsets-datacollector-${SDC_VERSION}/user-libs'
+      - 'sdc1_libs:/opt/streamsets-datacollector-${SDC_VERSION}/streamsets-libs'
+    networks:
+      sdc_net:
+        ipv4_address: ${SDC1_IP}
+    env_file:
+      - .env
+volumes:
+  sdc1_data:
+  sdc1_conf:
+  sdc1_user_libs:
+  sdc1_libs:
+networks:
+  sdc_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: ${NETWORK_SUBNET}
