@@ -10,10 +10,11 @@ services:
       - '18630:18630'
     volumes:
       - './host_volumes/host_data:/host_data'
+      - './host_volumes/sdc1_user_libs:/opt/streamsets-datacollector-user-libs'
       - './host_volumes/sdc1_libs_extras:/opt/streamsets-datacollector-${SDC_VERSION}/streamsets-libs-extras'
+      - './host_volumes/sdc1_libs_common_lib:/opt/streamsets-datacollector-${SDC_VERSION}/libs-common-lib'
       - 'sdc1_data:/data'
       - 'sdc1_conf:/etc/sdc'
-      - 'sdc1_user_libs:/opt/streamsets-datacollector-${SDC_VERSION}/user-libs'
       - 'sdc1_libs:/opt/streamsets-datacollector-${SDC_VERSION}/streamsets-libs'
     networks:
       sdc_net:
@@ -23,7 +24,6 @@ services:
 volumes:
   sdc1_data:
   sdc1_conf:
-  sdc1_user_libs:
   sdc1_libs:
 networks:
   sdc_net:
