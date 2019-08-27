@@ -1,8 +1,11 @@
-version: '3.7'
+version: '3.3'
 services:
   sdc1:
     container_name: ${COMPOSE_PROJECT_NAME}_sdc1
-    build: build/sdc1
+    build:
+      context: build/sdc1
+      args:
+        SDC_VERSION: $SDC_VERSION
     ports:
       - '18630:18630'
     volumes:

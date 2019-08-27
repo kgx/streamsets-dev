@@ -1,1 +1,2 @@
-FROM streamsets/datacollector:3.10.0
+ARG SDC_VERSION
+FROM streamsets/datacollector:${SDC_VERSION}
