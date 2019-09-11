@@ -1,0 +1,8 @@
+mssql_local01_jdbc_connection_string=jdbc:sqlserver://mssql:1433;databaseName=DB_NAME_HERE
+mssql_local01_jdbc_username=sa
+mssql_local01_jdbc_password=PASSWORD_HERE
+mssql_local01_jdbc_driver=com.microsoft.sqlserver.jdbc.SQLServerDriver
+db2_cloud01_jdbc_connection_string=jdbc:db2://HOSTNAME_HERE:50001/BLUDB:sslConnection=true;
+db2_cloud01_jdbc_username=USERNAME_HERE
+db2_cloud01_jdbc_password=PASSWORD_HERE
+db2_cloud01_jdbc_driver=com.ibm.db2.jcc.DB2Driver

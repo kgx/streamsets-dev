@@ -14,13 +14,20 @@ venv.bak/
 #Don't commit certificates
 *.jks
 *.pfx
+*.pem
 
 #Don't commit passwords
 keystore-password.txt
 
-# Ignore all files in host volumes by default
+# Ignore all files in host_volumes or config_files by default
 /host_volumes/**
+/config_files/**
 # Exclude subdirectories (while still including files)
 !/host_volumes/**/
-# Exclude .gitkeep files to preserve subdirectories with this file
+!/config_files/**/
+# Exclude .gitkeep files to preserve subdirectories
 !.gitkeep
+# Exclude .example files to provide templates for config files
+!*.example
+!*.*.example
+

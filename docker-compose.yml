@@ -6,9 +6,17 @@ services:
       context: build/sdc1
       args:
         SDC_VERSION: $SDC_VERSION
+        PREINSTALL_SDC_LIBS: $PREINSTALL_SDC_LIBS
+        SDC_BASE_URL: $SDC1_BASE_URL
+        SDC_HTTP_PORT: $SDC1_HTTP_PORT
+        SDC_HTTPS_PORT: $SDC1_HTTPS_PORT
+        SDC_KEYSTORE_PATH: $SDC1_KEYSTORE_PATH
+        SDC_KEYSTORE_PASSWORD: $SDC1_KEYSTORE_PASSWORD
     ports:
       - '18630:18630'
     volumes:
+      - './config_files/sdc1/etc/runtime.properties:/etc/sdc/runtime.properties'
+      - './config_files/sdc1/etc/sdc-keystore.pfx:/etc/sdc/sdc-keystore.pfx'
       - './host_volumes/host_data:/host_data'
       - './host_volumes/sdc1_user_libs:/opt/streamsets-datacollector-user-libs'
       - './host_volumes/sdc1_libs_extras:/opt/streamsets-datacollector-${SDC_VERSION}/streamsets-libs-extras'
